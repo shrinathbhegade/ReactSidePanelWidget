@@ -8,11 +8,9 @@ const Transcript = () => {
     const [historyIndex, setHistoryIndex] = useState(0);
     const transcriptRef = useRef(null);
 
-    // Scroll to bottom on new transcript
     useEffect(() => {
         if (recordingState === "recording") {
             const interval = setInterval(() => {
-                // Mock stream
                 appendTranscript(" This is a streamed phrase.");
             }, 3000);
             return () => clearInterval(interval);
@@ -52,9 +50,9 @@ const Transcript = () => {
     const editable = recordingState === "editing";
 
     return (
-        <div className="p-4 border-b">
-            <div className="flex justify-between items-center mb-2">
-                <h4 className="font-medium">
+        <div className="px-6 py-5 border-b border-gray-200 bg-white">
+            <div className="flex justify-between items-center mb-3">
+                <h4 className="text-base font-semibold text-gray-800">
                     Transcript - {recordingState === "paused" ? "Paused" : recordingState === "editing" ? "Edit" : "Recording"}
                 </h4>
                 {recordingState === "paused" && (
@@ -64,29 +62,29 @@ const Transcript = () => {
                             setEditHistory([transcript]);
                             setHistoryIndex(0);
                         }}
-                        className="text-blue-600 text-sm hover:underline"
+                        className="text-sm text-blue-600 hover:underline"
                     >
                         Edit
                     </button>
                 )}
                 {recordingState === "editing" && (
-                    <div className="flex gap-2">
-                        <button onClick={undo} className="text-gray-600 text-sm hover:underline">Undo</button>
-                        <button onClick={redo} className="text-gray-600 text-sm hover:underline">Redo</button>
+                    <div className="flex gap-3">
+                        <button onClick={undo} className="text-sm text-gray-600 hover:underline">Undo</button>
+                        <button onClick={redo} className="text-sm text-gray-600 hover:underline">Redo</button>
                     </div>
                 )}
             </div>
 
             {editable ? (
                 <textarea
-                    className="w-full h-40 p-2 border rounded resize-none text-sm"
+                    className="w-full h-40 p-3 border rounded-md resize-none text-sm text-gray-800 focus:outline-none focus:ring focus:border-blue-300"
                     value={transcript}
                     onChange={handleEdit}
                 />
             ) : (
                 <div
                     ref={transcriptRef}
-                    className="h-40 overflow-y-auto p-2 bg-gray-50 border text-sm rounded"
+                    className="h-40 overflow-y-auto p-3 bg-gray-50 border border-gray-200 text-sm text-gray-800 rounded-md whitespace-pre-wrap"
                 >
                     {transcript || <span className="text-gray-400">Streaming transcript will appear here...</span>}
                 </div>

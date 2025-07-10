@@ -25,20 +25,18 @@ const RecorderControls = () => {
     };
 
     return (
-        <div className="p-4 border-b space-y-3">
-            <div className="flex items-center gap-4">
-                <div className="text-2xl">
+        <div className="px-6 py-5 border-b border-gray-200 bg-white">
+            <div className="flex items-center gap-4 mb-4">
+                <div className="text-2xl text-blue-600">
                     {recordingState === "paused" ? "🎙️❌" : "🎙️"}
                 </div>
-                <div className="flex gap-1 h-5">
+                <div className="flex gap-[3px] h-5">
                     {[...Array(5)].map((_, i) => (
                         <div
                             key={i}
-                            className={`w-1 bg-blue-500 rounded ${recordingState === "recording"
-                                ? `animate-pulse delay-[${i * 100}ms]`
-                                : "opacity-30"
+                            className={`w-[4px] bg-blue-500 rounded-full transition-opacity duration-200 ${recordingState === "recording" ? "animate-pulse" : "opacity-30"
                                 }`}
-                            style={{ height: `${10 + (i % 3) * 5}px` }}
+                            style={{ height: `${10 + (i % 3) * 6}px` }}
                         ></div>
                     ))}
                 </div>
@@ -47,7 +45,7 @@ const RecorderControls = () => {
                     {formatTime(seconds)}
                 </div>
                 <button
-                    className="ml-auto px-4 py-1 bg-yellow-500 text-white rounded hover:bg-yellow-600"
+                    className="ml-auto px-4 py-2 rounded-md text-white font-semibold shadow transition-colors bg-yellow-500 hover:bg-yellow-600"
                     onClick={toggleRecording}
                 >
                     {recordingState === "paused" ? "Resume" : "Pause"}
@@ -58,9 +56,9 @@ const RecorderControls = () => {
                 <button
                     disabled={recordingState !== "paused"}
                     onClick={() => setModals({ generateSoap: true })}
-                    className={`px-4 py-1 rounded text-white ${recordingState === "paused"
-                        ? "bg-purple-600 hover:bg-purple-700"
-                        : "bg-purple-300 cursor-not-allowed"
+                    className={`px-5 py-2 rounded-md font-semibold shadow transition-colors ${recordingState === "paused"
+                        ? "bg-purple-600 text-white hover:bg-purple-700"
+                        : "bg-purple-200 text-white cursor-not-allowed"
                         }`}
                 >
                     Generate SOAP

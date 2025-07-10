@@ -16,20 +16,20 @@ const SidePanel = () => {
     if (!panelVisible) return null;
 
     return (
-        <div className="fixed inset-y-0 right-0 w-full sm:w-[400px] bg-white shadow-xl z-50 flex flex-col overflow-hidden">
+        <div className="fixed inset-y-0 right-0 w-full sm:w-[400px] bg-white shadow-2xl z-50 flex flex-col overflow-hidden rounded-l-2xl border-l border-gray-200">
             {/* Header */}
-            <div className="flex items-center justify-between p-4 border-b">
+            <div className="flex items-center justify-between px-5 py-4 border-b border-gray-200 bg-gray-50">
                 <img src="/src/assets/brand-logo.png" alt="Brand Logo" className="h-8" />
                 <button
-                    className="text-gray-500 hover:text-red-600"
+                    className="text-gray-400 hover:text-red-500 text-xl font-bold"
                     onClick={() => useAppStore.getState().setModals({ exitConfirmation: true })}
                 >
-                    ✕
+                    &times;
                 </button>
             </div>
 
             {/* Main Content */}
-            <div className="flex-1 overflow-y-auto">
+            <div className="flex-1 overflow-y-auto bg-white">
                 <PatientInfo />
                 <Diagnosis />
                 <Consent />

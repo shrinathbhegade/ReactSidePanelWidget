@@ -10,15 +10,17 @@ const Consent = () => {
     if (decisionMade) return null;
 
     return (
-        <div className="p-4 border-b">
-            <p className="text-sm mb-3">Do you approve voice recording to proceed with Agile Scribe evaluation?</p>
+        <div className="px-5 py-4 border-b border-gray-200 bg-white rounded-md shadow-sm">
+            <p className="text-sm text-gray-700 mb-4">
+                <strong className="text-gray-800">Consent Required:</strong> Do you approve voice recording to proceed with Agile Scribe evaluation?
+            </p>
             <div className="flex gap-4">
                 <button
                     onClick={() => {
                         setRecordingState("recording");
                         setDecisionMade(true);
                     }}
-                    className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700"
+                    className="bg-green-600 text-white px-5 py-2 rounded-md font-medium shadow hover:bg-green-700 transition-colors"
                 >
                     Approve
                 </button>
@@ -26,7 +28,7 @@ const Consent = () => {
                     onClick={() => {
                         setPanelVisible(false);
                     }}
-                    className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
+                    className="bg-gray-200 text-gray-800 px-5 py-2 rounded-md font-medium shadow hover:bg-gray-300 transition-colors"
                 >
                     Deny
                 </button>
