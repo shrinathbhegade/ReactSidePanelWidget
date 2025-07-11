@@ -9,14 +9,16 @@ import Transcript from "./Transcript";
 import GenerateSoapModal from "./GenerateSoapModal";
 import SoapProgressModal from "./SoapProgressModal";
 import ExitConfirmationModal from "./ExitConfirmationModal";
+import GenerateSoapAction from "./GenerateSoapAction";
+
 
 const SidePanel = () => {
-    const { panelVisible, resetAll, modals } = useAppStore();
 
+    const { panelVisible, resetAll, modals, recordingState } = useAppStore();
     if (!panelVisible) return null;
 
     return (
-        <div className="fixed inset-y-0 right-0 w-full sm:w-[400px] bg-white shadow-2xl z-50 flex flex-col overflow-hidden rounded-l-2xl border-l border-gray-200">
+        <div className="fixed inset-y-0 right-0 w-full sm:w-[40%] max-w-[500px] bg-white shadow-2xl z-50 flex flex-col overflow-hidden rounded-l-2xl border-l border-gray-200">
             {/* Header */}
             <div className="flex items-center justify-between px-5 py-4 border-b border-gray-200 bg-gray-50">
                 <img src="/src/assets/brand-logo.png" alt="Brand Logo" className="h-8" />
@@ -34,7 +36,12 @@ const SidePanel = () => {
                 <Diagnosis />
                 <Consent />
                 <RecorderControls />
-                <Transcript />
+                {recordingState !== "idle" && (
+                    <>
+                        <Transcript />
+                        <GenerateSoapAction />
+                    </>
+                )}
             </div>
 
             {/* Modals */}

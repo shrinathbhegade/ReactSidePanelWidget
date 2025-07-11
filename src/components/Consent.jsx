@@ -17,20 +17,20 @@ const Consent = () => {
             <div className="flex gap-4">
                 <button
                     onClick={() => {
+                        setPanelVisible(false);
+                    }}
+                    className="bg-gray-200 text-gray-800 px-5 py-2 rounded-md font-medium shadow hover:bg-gray-300 transition-colors"
+                >
+                    Deny
+                </button>
+                <button
+                    onClick={() => {
                         setRecordingState("recording");
                         setDecisionMade(true);
                     }}
                     className="bg-green-600 text-white px-5 py-2 rounded-md font-medium shadow hover:bg-green-700 transition-colors"
                 >
                     Approve
-                </button>
-                <button
-                    onClick={() => {
-                        setPanelVisible(false);
-                    }}
-                    className="bg-gray-200 text-gray-800 px-5 py-2 rounded-md font-medium shadow hover:bg-gray-300 transition-colors"
-                >
-                    Deny
                 </button>
             </div>
         </div>

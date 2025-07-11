@@ -52,7 +52,7 @@ const RecorderControls = () => {
                 </button>
             </div>
 
-            <div className="text-right">
+            {/* <div className="text-right">
                 <button
                     disabled={recordingState !== "paused"}
                     onClick={() => setModals({ generateSoap: true })}
@@ -63,7 +63,7 @@ const RecorderControls = () => {
                 >
                     Generate SOAP
                 </button>
-            </div>
+            </div> */}
         </div>
     );
 };
