@@ -5,20 +5,28 @@ const Diagnosis = () => {
     const [collapsed, setCollapsed] = useState(false);
 
     return (
-        <div className="px-6 py-5 border-b border-gray-200 bg-white">
+        <div className="px-4 py-2 border-b border-gray-200 bg-white">
             <div
                 className="flex items-center justify-between cursor-pointer mb-1"
                 onClick={() => setCollapsed(!collapsed)}
             >
-                <h3 className="text-base font-semibold text-gray-800">Diagnosis</h3>
+                <h3 className="text-base font-semibold text-gray-800"><strong>Precautions</strong></h3>
                 <button className="text-gray-500 text-lg focus:outline-none">
                     {collapsed ? "▾" : "▴"}
                 </button>
             </div>
+
             {!collapsed && (
                 <div className="mt-2 text-sm text-gray-600 space-y-1">
-                    <p>Type 2 Diabetes Mellitus</p>
-                    <p>Hypertension</p>
+                    <ul>
+                        <li>● Avoid twisting or pivoting on the operated leg</li>
+
+                        <li>● No high-impact activities until cleared by the therapist</li>
+
+                        <li>● Use knee brace as recommended</li>
+
+                        <li>● Focus on controlled range-of-motion exercises only</li>
+                    </ul>
                 </div>
             )}
         </div>

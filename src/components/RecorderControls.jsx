@@ -25,7 +25,7 @@ const RecorderControls = () => {
     };
 
     return (
-        <div className="px-6 py-5 border-b border-gray-200 bg-white">
+        <div className="px-4 py-2 border-b border-gray-200 bg-white">
             <div className="flex items-center gap-4 mb-4">
                 <div className="text-2xl text-blue-600">
                     {recordingState === "paused" ? "🎙️❌" : "🎙️"}

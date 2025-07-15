@@ -10,6 +10,8 @@ export const useAppStore = create((set) => ({
         soapProgress: false,
         exitConfirmation: false,
     },
+    isMinimized: false,
+    setIsMinimized: (value) => set({ isMinimized: value }),
     setPanelVisible: (visible) => set({ panelVisible: visible }),
     setRecordingState: (state) => set({ recordingState: state }),
     setTranscript: (text) => set({ transcript: text }),

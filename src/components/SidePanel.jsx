@@ -1,15 +1,17 @@
 // src/components/SidePanel.jsx
 import React from "react";
 import { useAppStore } from "../store/useAppStore";
+import PatientCard from "./PatientCard";
+import RecorderControls from "./RecorderControls";
+import Transcript from "./Transcript";
+import GenerateSoapAction from "./GenerateSoapAction";
 import PatientInfo from "./PatientInfo";
 import Diagnosis from "./Diagnosis";
 import Consent from "./Consent";
-import RecorderControls from "./RecorderControls";
-import Transcript from "./Transcript";
 import GenerateSoapModal from "./GenerateSoapModal";
 import SoapProgressModal from "./SoapProgressModal";
 import ExitConfirmationModal from "./ExitConfirmationModal";
-import GenerateSoapAction from "./GenerateSoapAction";
+
 
 
 const SidePanel = () => {
@@ -19,9 +21,8 @@ const SidePanel = () => {
 
     return (
         <div className="fixed inset-y-0 right-0 w-full sm:w-[40%] max-w-[500px] bg-white shadow-2xl z-50 flex flex-col overflow-hidden rounded-l-2xl border-l border-gray-200">
-            {/* Header */}
-            <div className="flex items-center justify-between px-5 py-4 border-b border-gray-200 bg-gray-50">
-                <img src="/src/assets/brand-logo.png" alt="Brand Logo" className="h-8" />
+            <div className="flex items-center justify-between px-2 py-2 border-b border-gray-200 bg-gray-50">
+                <img src="/src/assets/brand-logo.png" alt="Brand Logo" className="h-14" />
                 <button
                     className="text-gray-400 hover:text-red-500 text-xl font-bold"
                     onClick={() => useAppStore.getState().setModals({ exitConfirmation: true })}
