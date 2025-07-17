@@ -11,6 +11,8 @@ export const useAppStore = create((set) => ({
         exitConfirmation: false,
     },
     isMinimized: false,
+    entryModalVisible: false,
+    setEntryModalVisible: (value) => set({ entryModalVisible: value }),
     setIsMinimized: (value) => set({ isMinimized: value }),
     setPanelVisible: (visible) => set({ panelVisible: visible }),
     setRecordingState: (state) => set({ recordingState: state }),
