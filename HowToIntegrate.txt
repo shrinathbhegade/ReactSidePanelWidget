@@ -1,0 +1,19 @@
+You will need a root having following id,
+
+<div id="agile-widget-root"></div>
+
+----------------------------------------------------------------
+
+In document ready function prepare widget using "renderAgileWidget()" 
+which is exposed by vite output file agile-scribe-widget.iife.js.
+
+$(function () {
+    renderAgileWidget('agile-widget-root');
+});
+
+----------------------------------------------------------------
+
+In main.jsx file, the line "styleLink.setAttribute('href', '/Content/Css/style.css');" refers to stylesheet url in your MVC app.
+Please update accordingly.
+
+----------------------------------------------------------------
