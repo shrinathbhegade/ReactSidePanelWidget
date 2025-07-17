@@ -4,39 +4,9 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import "./styles.css";
 import { useAppStore } from "./store/useAppStore";
-import StylesUrl from '../dist/style.css?url';
-
-// ReactDOM.createRoot(document.getElementById("agile-scribe-root")).render(
-//     <React.StrictMode>
-//         <App />
-//     </React.StrictMode>
-// );
-
-// window.renderAgileWidget = function (containerId) {
-//     ReactDOM.createRoot(document.getElementById(containerId)).render(<App />);
-// };
-
-// window.renderAgileWidget = function (containerId) {
-//     ReactDOM.createRoot(document.getElementById(containerId)).render(<App />);
-
-//     window.showAgileWidget = function () {
-//         useAppStore.getState().setEntryModalVisible(true);
-//         document.body.style.overflow = 'hidden';
-//     };
-// };
-
-// Define a method to render the widget in a given container
-// window.renderAgileWidget = function (containerId = 'agile-widget-root') {
-//     const container = document.getElementById(containerId);
-//     if (container) {
-//         ReactDOM.createRoot(container).render(<App />);
-//     } else {
-//         console.error(`Container with id '${containerId}' not found.`);
-//     }
-// };
-
 
 window.renderAgileWidget = function (containerId = 'agile-widget-root') {
+    console.log("render...")
     const container = document.getElementById(containerId);
 
     if (container) {
@@ -54,3 +24,12 @@ window.renderAgileWidget = function (containerId = 'agile-widget-root') {
         }
     }
 };
+
+// window.closeAgileWidget = function (containerId = 'agile-widget-root') {
+//     const container = document.getElementById(containerId);
+//     if (container && container.shadowRoot) {
+//         container.shadowRoot.innerHTML = ''; // clears shadow DOM content
+//         container.removeAttribute('shadowRoot');
+//         document.body.style.overflow = 'auto'; // re-enable scroll
+//     }
+// };
