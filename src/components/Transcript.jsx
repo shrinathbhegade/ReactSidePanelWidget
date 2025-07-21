@@ -50,7 +50,7 @@ const Transcript = () => {
     const editable = recordingState === "editing";
 
     return (
-        <div className="px-4 py-2 border-b border-gray-200 bg-white">
+        <div className="px-4 py-2 border-gray-200 bg-[#f6f9ec]">
             <div className="flex justify-between items-center mb-3">
                 <h4 className="text-base font-semibold text-gray-800">
                     Transcript - {recordingState === "paused" ? "Paused" : recordingState === "editing" ? "Edit" : "Recording"}

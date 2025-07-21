@@ -10,7 +10,7 @@ const PatientInfo = () => {
     const referingProvider = "Sayali N";
 
     return (
-        <div className="px-4 py-2 border-b border-gray-200 bg-white">
+        <div className="px-0 py-2 border-b border-gray-200 bg-[#f6f9ec]">
             <div className="flex items-center gap-4">
                 <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-400 text-2xl shadow">
                     👤

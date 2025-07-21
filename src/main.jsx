@@ -14,10 +14,14 @@ window.renderAgileWidget = function (containerId = 'agile-widget-root') {
             const shadowRoot = container.attachShadow({ mode: 'open' });
 
             // Inject styles into shadow root
+            const faScript = document.createElement('script');
+            faScript.setAttribute('src', 'https://kit.fontawesome.com/a2b4f6ee5e.js');
+            faScript.setAttribute('crossorigin', 'anonymous');
+            shadowRoot.appendChild(faScript);
             const styleLink = document.createElement('link');
             styleLink.setAttribute('rel', 'stylesheet');
             //styleLink.setAttribute('href', '../dist/style.css');
-            styleLink.setAttribute('href', '/Content/Css/style.css');
+            styleLink.setAttribute('href', '/Scripts/agility/widgets/style.css');
             shadowRoot.appendChild(styleLink);
 
             ReactDOM.createRoot(shadowRoot).render(<App />);

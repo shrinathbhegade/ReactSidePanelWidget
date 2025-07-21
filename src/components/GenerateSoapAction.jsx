@@ -8,7 +8,7 @@ const GenerateSoapAction = () => {
     if (recordingState === "idle") return null;
 
     return (
-        <div className="px-4 py-2 bg-white border-t border-gray-200">
+        <div className="px-4 py-2 bg-white border-gray-200">
             <div className="text-right">
                 <button
                     disabled={recordingState !== "paused"}
