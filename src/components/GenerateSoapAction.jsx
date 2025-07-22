@@ -13,12 +13,12 @@ const GenerateSoapAction = () => {
                 <button
                     disabled={recordingState !== "paused"}
                     onClick={() => setModals({ generateSoap: true })}
-                    className={`px-6 py-2 rounded-md font-semibold shadow transition-colors text-white ${recordingState === "paused"
-                        ? "bg-purple-600 hover:bg-purple-700"
-                        : "bg-purple-200 cursor-not-allowed"
+                    className={`px-6 py-2 rounded-full font-semibold shadow transition-colors text-white ${recordingState === "paused"
+                        ? "bg-[#586835] hover:brightness-125"
+                        : "bg-gray-400 cursor-not-allowed"
                         }`}
                 >
-                    ✨ Generate SOAP
+                    ✨ GENERATE SOAP
                 </button>
             </div>
         </div>
