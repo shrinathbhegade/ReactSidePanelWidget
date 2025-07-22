@@ -42,10 +42,16 @@ const SidePanel = () => {
                     <>
                         {/* <Transcript /> */}
                         <RecorderCard />
-                        <GenerateSoapAction />
+                        {/* <GenerateSoapAction /> */}
                     </>
                 )}
             </div>
+
+            {recordingState !== "idle" && (
+                <div className="sticky bottom-0">
+                    <GenerateSoapAction />
+                </div>
+            )}
 
             {/* Modals */}
             {modals.generateSoap && <GenerateSoapModal />}

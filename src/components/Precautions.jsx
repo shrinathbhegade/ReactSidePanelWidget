@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from 'framer-motion';
+import { Icons } from "./ScribeIcons/Icons";
 
 const Precautions = () => {
     const [collapsed, setCollapsed] = useState(true);
@@ -11,7 +12,7 @@ const Precautions = () => {
                 onClick={() => setCollapsed(!collapsed)}
             >
                 <div className="flex items-center gap-2">
-                    <i className="fa-solid fa-notes-medical text-gray-500"></i>
+                    <Icons.Demography />
                     <span className="font-medium text-gray-800">Precautions</span>
                 </div>
                 <button className="text-gray-500 text-lg focus:outline-none">

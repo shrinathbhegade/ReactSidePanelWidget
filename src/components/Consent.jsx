@@ -1,6 +1,7 @@
 // src/components/Consent.jsx
 import React, { useState } from "react";
 import { useAppStore } from "../store/useAppStore";
+import { Icons } from "./ScribeIcons/Icons";
 
 const Consent = () => {
     const [decisionMade, setDecisionMade] = useState(false);
@@ -12,7 +13,7 @@ const Consent = () => {
     return (
         <div className="bg-[#f6f9ec] p-4 border border-[#c4dc8f] rounded-lg mx-4 my-3">
             <div className="flex items-center gap-2 mb-2">
-                <i className="fa-regular fa-file-lines text-orange-500"></i>
+                <Icons.ListAltCheck className="text-orange-700 h-6 w-8" />
                 <span className="font-semibold text-gray-800 text-sm">Consent</span>
             </div>
             <p className="text-sm text-gray-600 mb-4">
@@ -25,7 +26,7 @@ const Consent = () => {
                     }}
                     className="border border-orange-400 text-orange-600 px-4 py-1.5 rounded-full text-sm font-medium flex items-center gap-2"
                 >
-                    <i className="fa-regular fa-circle-xmark"></i> Deny
+                    <Icons.Cancel className="text-orange-600 h-6 w-6" /> Deny
                 </button>
                 <button
                     onClick={() => {
@@ -34,7 +35,7 @@ const Consent = () => {
                     }}
                     className="bg-orange-500 text-white px-4 py-1.5 rounded-full text-sm font-medium flex items-center gap-2 shadow"
                 >
-                    <i className="fa-regular fa-circle-check"></i> Approve
+                    <Icons.CheckCircle className="text-white h-6 w-6" /> Approve
                 </button>
             </div>
         </div>

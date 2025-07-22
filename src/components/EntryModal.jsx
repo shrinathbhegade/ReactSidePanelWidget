@@ -2,6 +2,7 @@
 import React from "react";
 import { useAppStore } from "../store/useAppStore";
 import { motion } from 'framer-motion';
+import { Icons } from "./ScribeIcons/Icons";
 
 const EntryModal = () => {
     const setPanelVisible = useAppStore((state) => state.setPanelVisible);
@@ -25,12 +26,12 @@ const EntryModal = () => {
                         className="flex flex-col items-center border rounded-xl p-4 text-center hover:shadow-md hover:border-blue-400 transition cursor-pointer relative"
                         onClick={() => setPanelVisible(true)}
                     >
-                        <div className="text-2xl mb-2">📝</div>
+                        <div className="text-2xl mb-2"><Icons.ContractNote /></div>
                         <div className="font-medium text-gray-700 mb-1">Manual</div>
                         <div className="text-xs text-gray-500 mb-6">Record observations manually</div>
                         <div className="absolute -bottom-4">
                             <div className="w-10 h-10 flex items-center justify-center bg-blue-600 text-white rounded-full shadow-md">
-                                ➝
+                                <Icons.ArrowBack className="text-white w-3/4" />
                             </div>
                         </div>
                     </motion.div>
@@ -43,12 +44,12 @@ const EntryModal = () => {
                         className="flex flex-col items-center border rounded-xl p-4 text-center bg-lime-50 hover:shadow-md hover:border-lime-400 transition cursor-pointer relative"
                         onClick={() => setPanelVisible(true)}
                     >
-                        <div className="text-2xl mb-2">✨</div>
+                        <div className="text-2xl mb-2"><Icons.WandStars /></div>
                         <div className="font-medium text-gray-700 mb-1">AgileSCRIBE</div>
                         <div className="text-xs text-gray-500 mb-6">Requires patient consent to record by AI</div>
                         <div className="absolute -bottom-4">
                             <div className="w-10 h-10 flex items-center justify-center bg-lime-600 text-white rounded-full shadow-md">
-                                ➝
+                                <Icons.ArrowForward className="text-white w-3/4" />
                             </div>
                         </div>
                     </motion.div>

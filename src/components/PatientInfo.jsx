@@ -1,5 +1,6 @@
 // src/components/PatientInfo.jsx
 import React from "react";
+import { Icons } from "./ScribeIcons/Icons";
 
 const PatientInfo = () => {
     const name = "Penny Johnson";
@@ -33,8 +34,8 @@ const PatientInfo = () => {
                 </div> */}
             </div>
             <hr className="mt-2"></hr>
-            <div className="mb-2 mt-2">
-                <span>Diagnosis: Back pain due to falling on hip</span>
+            <div className="mb-2 mt-2 flex gap-2">
+                <Icons.Stethoscope /><span>Diagnosis: Back pain due to falling on hip</span>
             </div>
         </div>
     );
