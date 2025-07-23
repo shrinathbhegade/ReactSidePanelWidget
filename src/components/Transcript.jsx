@@ -3,7 +3,13 @@ import React, { useEffect, useRef, useState } from "react";
 import { useAppStore } from "../store/useAppStore";
 
 const Transcript = () => {
-    const { transcript, recordingState, setTranscript, appendTranscript, setRecordingState } = useAppStore();
+    const { transcript,
+        recordingState,
+        setTranscript,
+        appendTranscript,
+        setRecordingState,
+        isEditing,
+        setIsEditing } = useAppStore();
     const [editHistory, setEditHistory] = useState([""]);
     const [historyIndex, setHistoryIndex] = useState(0);
     const transcriptRef = useRef(null);
@@ -77,14 +83,14 @@ const Transcript = () => {
 
             {editable ? (
                 <textarea
-                    className="w-full h-40 p-3 border rounded-md resize-none text-sm text-gray-800 focus:outline-none focus:ring focus:border-blue-300"
+                    className="w-full h-80 border rounded-md resize-none text-sm text-gray-800 focus:outline-none focus:ring focus:border-blue-300"
                     value={transcript}
                     onChange={handleEdit}
                 />
             ) : (
                 <div
                     ref={transcriptRef}
-                    className="h-40 overflow-y-auto p-3 text-sm text-gray-800 rounded-md whitespace-pre-wrap"
+                    className="h-80 overflow-y-auto text-sm text-gray-800 rounded-md whitespace-pre-wrap"
                 >
                     {transcript || <span className="text-gray-400">Streaming transcript will appear here...</span>}
                 </div>
