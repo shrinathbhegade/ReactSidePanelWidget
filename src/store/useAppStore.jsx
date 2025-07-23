@@ -20,9 +20,10 @@ export const useAppStore = create((set) => ({
     appendTranscript: (text) =>
         set((state) => ({ transcript: state.transcript + text })),
     setModals: (modals) => set((state) => ({ modals: { ...state.modals, ...modals } })),
-    resetAll: () =>
+    resetAll: () => {
         set({
             panelVisible: false,
+            entryModalVisible: false,
             recordingState: 'idle',
             transcript: '',
             modals: {
@@ -30,5 +31,8 @@ export const useAppStore = create((set) => ({
                 soapProgress: false,
                 exitConfirmation: false,
             },
-        })
+        });
+
+        document.body.style.overflow = 'auto';
+    }
 }));

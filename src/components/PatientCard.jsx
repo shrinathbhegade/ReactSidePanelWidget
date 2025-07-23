@@ -2,16 +2,14 @@
 import React from "react";
 import PatientInfo from "./PatientInfo";
 import Diagnosis from "./Diagnosis";
+import Precautions from "./Precautions";
 import Consent from "./Consent";
 
 const PatientCard = () => {
     return (
-        <div className="px-6">
-            <div className="bg-white border border-gray-200 rounded-t-2xl px-5 pt-6 pb-4">
-                <PatientInfo />
-                <Diagnosis />
-                <Consent />
-            </div>
+        <div className="px-5 pt-3 bg-[#ffffff] border border-[#c4dc8f] mx-4 mt-3 rounded-xl text-sm text-gray-700">
+            <PatientInfo />
+            <Precautions />
         </div>
     );
 };

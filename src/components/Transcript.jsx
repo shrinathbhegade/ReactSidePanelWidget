@@ -50,7 +50,7 @@ const Transcript = () => {
     const editable = recordingState === "editing";
 
     return (
-        <div className="px-4 py-2 border-b border-gray-200 bg-white">
+        <div className="py-2 border-gray-200">
             <div className="flex justify-between items-center mb-3">
                 <h4 className="text-base font-semibold text-gray-800">
                     Transcript - {recordingState === "paused" ? "Paused" : recordingState === "editing" ? "Edit" : "Recording"}
@@ -84,7 +84,7 @@ const Transcript = () => {
             ) : (
                 <div
                     ref={transcriptRef}
-                    className="h-40 overflow-y-auto p-3 bg-gray-50 border border-gray-200 text-sm text-gray-800 rounded-md whitespace-pre-wrap"
+                    className="h-40 overflow-y-auto p-3 text-sm text-gray-800 rounded-md whitespace-pre-wrap"
                 >
                     {transcript || <span className="text-gray-400">Streaming transcript will appear here...</span>}
                 </div>

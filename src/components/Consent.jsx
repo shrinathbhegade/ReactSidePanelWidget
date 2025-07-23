@@ -1,6 +1,7 @@
 // src/components/Consent.jsx
 import React, { useState } from "react";
 import { useAppStore } from "../store/useAppStore";
+import { Icons } from "./ScribeIcons/Icons";
 
 const Consent = () => {
     const [decisionMade, setDecisionMade] = useState(false);
@@ -10,31 +11,37 @@ const Consent = () => {
     if (decisionMade) return null;
 
     return (
-        <div className="px-4 py-2 border-b border-gray-200 bg-white rounded-md shadow-sm">
-            <p className="text-sm text-gray-700 mb-4">
-                <strong className="text-gray-800">Consent Required</strong> <br></br>Do you approve voice recording to proceed with Agile Scribe evaluation?
+        <div className="bg-[#f6f9ec] p-4 border border-[#c4dc8f] rounded-lg mx-4 my-3">
+            <div className="flex items-center gap-2 mb-2">
+                <Icons.ListAltCheck className="text-orange-700 h-6 w-8" />
+                <span className="font-semibold text-gray-800 text-sm">Consent</span>
+            </div>
+            <p className="text-sm text-gray-600 mb-4">
+                Your participation is voluntary, and all information will be kept confidential.
             </p>
             <div className="flex gap-4">
                 <button
                     onClick={() => {
                         setPanelVisible(false);
                     }}
-                    className="bg-gray-200 text-gray-800 px-5 py-2 rounded-md font-medium shadow hover:bg-gray-300 transition-colors"
+                    className="border border-orange-400 text-orange-600 px-4 py-1.5 rounded-full text-sm font-medium flex items-center gap-2"
                 >
-                    Deny
+                    <Icons.Cancel className="text-orange-600 h-6 w-6" /> Deny
                 </button>
                 <button
                     onClick={() => {
                         setRecordingState("recording");
                         setDecisionMade(true);
                     }}
-                    className="bg-green-600 text-white px-5 py-2 rounded-md font-medium shadow hover:bg-green-700 transition-colors"
+                    className="bg-orange-500 text-white px-4 py-1.5 rounded-full text-sm font-medium flex items-center gap-2 shadow"
                 >
-                    Approve
+                    <Icons.CheckCircle className="text-white h-6 w-6" /> Approve
                 </button>
             </div>
         </div>
     );
 };
+
+
 
 export default Consent;

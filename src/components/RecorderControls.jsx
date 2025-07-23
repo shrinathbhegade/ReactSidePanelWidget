@@ -25,8 +25,8 @@ const RecorderControls = () => {
     };
 
     return (
-        <div className="px-4 py-2 border-b border-gray-200 bg-white">
-            <div className="flex items-center gap-4 mb-4">
+        <div className="px-5 py-2 bg-[#b0d06a] border border-[#c4dc8f] rounded-full text-sm text-gray-700">
+            <div className="flex items-center gap-4">
                 <div className="text-2xl text-blue-600">
                     {recordingState === "paused" ? "🎙️❌" : "🎙️"}
                 </div>
@@ -45,7 +45,7 @@ const RecorderControls = () => {
                     {formatTime(seconds)}
                 </div>
                 <button
-                    className="ml-auto px-4 py-2 rounded-md text-white font-semibold shadow transition-colors bg-yellow-500 hover:bg-yellow-600"
+                    className="ml-auto px-4 py-2 rounded-full text-white font-semibold shadow transition-colors bg-yellow-500 hover:bg-yellow-600"
                     onClick={toggleRecording}
                 >
                     {recordingState === "paused" ? "Resume" : "Pause"}
