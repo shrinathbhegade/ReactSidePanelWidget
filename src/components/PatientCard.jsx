@@ -7,7 +7,7 @@ import Consent from "./Consent";
 
 const PatientCard = () => {
     return (
-        <div className="px-5 pt-3 bg-[#ffffff] border border-[#c4dc8f] mx-4 mt-3 rounded-xl text-sm text-gray-700">
+        <div className="px-5 pt-3 bg-[#ffffff] border border-[#c4dc8f] shadow-md shadow-[#c4dc8f] mx-4 mt-3 rounded-xl text-sm text-gray-700">
             <PatientInfo />
             <Precautions />
         </div>

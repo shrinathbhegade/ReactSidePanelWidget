@@ -12,6 +12,8 @@ export const useAppStore = create((set) => ({
     },
     isMinimized: false,
     entryModalVisible: false,
+    isEditing: false,
+    setIsEditing: (flag) => set({ isEditing: flag }),
     setEntryModalVisible: (value) => set({ entryModalVisible: value }),
     setIsMinimized: (value) => set({ isMinimized: value }),
     setPanelVisible: (visible) => set({ panelVisible: visible }),

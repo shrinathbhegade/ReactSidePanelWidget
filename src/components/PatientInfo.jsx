@@ -28,10 +28,10 @@ const PatientInfo = () => {
                     <div className="text-base font-semibold text-gray-800">Payer</div>
                     <div className="text-sm text-gray-500">{payer}</div>
                 </div>
-                {/* <div>
+                <div>
                     <div className="text-base font-semibold text-gray-800">Refering Provider</div>
                     <div className="text-sm text-gray-500">{referingProvider}</div>
-                </div> */}
+                </div>
             </div>
             <hr className="mt-2"></hr>
             <div className="mb-2 mt-2 flex gap-2">
