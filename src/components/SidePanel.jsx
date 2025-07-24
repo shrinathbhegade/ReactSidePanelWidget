@@ -22,11 +22,11 @@ const SidePanel = () => {
     if (!panelVisible) return null;
 
     return (
-        <div className="fixed inset-y-0 right-0 w-full sm:w-[50%] max-w-[640px] bg-[#f6f9ec] shadow-2xl z-50 flex flex-col overflow-hidden rounded-l-xl border-l border-gray-200">
+        <div className="fixed inset-y-0 right-4 top-5 w-full sm:w-[50%] max-w-[640px] bg-[#f6f9ec] shadow-2xl z-50 flex flex-col overflow-hidden rounded-l-xl rounded-r-xl border-l border-gray-200">
             <div className="flex items-center justify-between px-2 py-2 border-b border-gray-200 bg-[#b0d06a]">
                 <img src="/Content/Images/brand-logo.png" alt="Brand Logo" className="h-8" />
                 <button
-                    className="text-gray-400 hover:text-red-500 text-xl font-bold"
+                    className="text-gray-600 hover:text-green-950 text-xl font-bold"
                     onClick={() => useAppStore.getState().setModals({ exitConfirmation: true })}
                 >
                     &times;
@@ -34,15 +34,12 @@ const SidePanel = () => {
             </div>
 
             {/* Main Content */}
-            <div className="flex-1 overflow-y-auto bg-white">
+            <div className="flex-1 overflow-y-auto">
                 <PatientCard />
                 <Consent />
-                {/* <RecorderControls /> */}
                 {recordingState !== "idle" && (
                     <>
-                        {/* <Transcript /> */}
                         <RecorderCard />
-                        {/* <GenerateSoapAction /> */}
                     </>
                 )}
             </div>
