@@ -7,6 +7,7 @@ const Consent = () => {
     const [decisionMade, setDecisionMade] = useState(false);
     const setPanelVisible = useAppStore((s) => s.setPanelVisible);
     const setRecordingState = useAppStore((s) => s.setRecordingState);
+    const setEntryModalVisible = useAppStore((s) => s.setEntryModalVisible);
 
     if (decisionMade) return null;
 
@@ -17,12 +18,14 @@ const Consent = () => {
                 <span className="font-semibold text-gray-800 text-sm">Consent</span>
             </div>
             <p className="text-sm text-gray-600 mb-4">
-                Your participation is voluntary, and all information will be kept confidential.
+                Your participation is voluntary and all information will be kept confidential.
             </p>
             <div className="flex gap-4">
                 <button
                     onClick={() => {
+                        document.body.style.overflow = 'auto';
                         setPanelVisible(false);
+                        setEntryModalVisible(false);
                     }}
                     className="border border-orangeBorder text-orangeText px-4 py-1.5 rounded-full text-sm font-medium flex items-center gap-2 hover:shadow-xl hover:brightness-75"
                 >

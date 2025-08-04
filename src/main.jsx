@@ -29,11 +29,3 @@ window.renderAgileWidget = function (containerId = 'agile-widget-root') {
     }
 };
 
-// window.closeAgileWidget = function (containerId = 'agile-widget-root') {
-//     const container = document.getElementById(containerId);
-//     if (container && container.shadowRoot) {
-//         container.shadowRoot.innerHTML = ''; // clears shadow DOM content
-//         container.removeAttribute('shadowRoot');
-//         document.body.style.overflow = 'auto'; // re-enable scroll
-//     }
-// };
